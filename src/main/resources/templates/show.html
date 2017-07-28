@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<form action="selectname">
+    用户名<input type="text" name="uname">
+    <input type="submit" value="查询">
+</form>
+<table class="table table-striped">
+    <caption>用户管理</caption>
+    <tr>
+        <th>编号</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>爱好</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="user:${list}">
+        <td th:text="${user.id}">-</td>
+        <td th:text="${user.uname}">-</td>
+        <td th:text="${user.passwd}">-</td>
+        <td th:text="${user.age}">-</td>
+        <td th:text="${user.gender}"></td>
+        <td th:text="${user.hobby}"></td>
+        <td>
+            <button class="btn btn-danger tn-sm " data-toggle="modal" data-target="#myModal"  th:value="${user.id}" onclick="toupdate(this)">
+                修改
+            </button>
+            <a th:href="@{delete(id=${user.id})}">删除</a>
+        </td>
+    </tr>
+</body>
+</html>

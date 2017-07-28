@@ -1,4 +1,4 @@
-package com.bawei;
+package com.bw;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Demo2017ApplicationTests {
+public class GoodluckZhaodewangProviderApplicationTests {
 
 	@Test
 	public void contextLoads() {
